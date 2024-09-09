@@ -1,0 +1,5 @@
+gitpython
+tinydb
+python-dotenv
+cryptography
+tqdm

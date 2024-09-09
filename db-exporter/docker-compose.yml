@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  portainer-db-exporter:
+    container_name: portainer-db-exporter
+    # The image is not available on Docker Hub, so you need to build it yourself
+    image: bearlike/portainer-db-exporter:latest
+    build: .
+    volumes:
+      # Modify to where your project is.
+      - /AppData/scripts/compose-backups/.cache/portainer.db:/app/portainer.db
+      - /AppData/scripts/compose-backups/.cache:/output
+    command: "./exporter"
